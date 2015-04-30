@@ -5,21 +5,29 @@ public class Build : MonoBehaviour
 {
 	public bool placingBuilding;
 	public bool contextPlacement;
-	public GameObject building;
+	public GameObject buildingToPlace;
 
 	private Ray placementRay;
 	private RaycastHit placement;
 	private bool rotating;
 	private Ray currentMousePosition;
+	private GameObject building;
+	private Vector3 floatPosition = new Vector3(0f, 1.3f, 0f);
 
 	void Start()
 	{
 		rotating = false;
+		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
 	}
 
 	void Update()
 	{
-		if (placingBuilding && Input.GetMouseButtonDown(0))
+		if (placingBuilding)
+		{
+			displayBuildingPlacement(building);
+		}
+
+		if (placingBuilding && Input.GetMouseButtonUp(0))
 		{
 			placeBuilding(building);
 			placingBuilding = false;
@@ -44,6 +52,18 @@ public class Build : MonoBehaviour
 		}
 	}
 
+	// show the building preview and move it around with drag
+	private void displayBuildingPlacement(GameObject building)
+	{
+		placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		if (Physics.Raycast(placementRay, out placement))
+		{
+			building.transform.position = placement.point + floatPosition;
+		}
+	}
+
+	// place the building if it can be placed
 	private void placeBuilding(GameObject building)
 	{
 		placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -54,13 +74,17 @@ public class Build : MonoBehaviour
 				Debug.Log("not ground");
 				return;
 			}
-
-			Instantiate(building, placement.point, Quaternion.identity);
 		}
+
+		building.transform.position = new Vector3(placement.point.x, 0.5f, placement.point.z);
 	}
 
+	// rotate around center relative to amount dragged from the starting position on mouse
 	private void rotateBuilding(GameObject building)
 	{
-		// rotate around center relative to amount dragged from the starting position on mouse
+//		Ray updatedMousePosition = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Quaternion target = Quaternion.Euler(20f, 0f, 20f);
+
+		building.transform.rotation = Quaternion.Slerp(transform.rotation, target, 20f * Time.deltaTime);
 	}
 }
