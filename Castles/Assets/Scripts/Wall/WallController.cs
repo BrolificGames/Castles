@@ -7,7 +7,7 @@ public class WallController : MonoBehaviour
 
 	void Start()
 	{
-		ShowContextMenu();
+//		ShowContextMenu();
 	}
 
 	private void ShowContextMenu()
