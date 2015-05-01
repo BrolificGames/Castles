@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: a6812c2876b5d4773ab4847167139bf8
+timeCreated: 1430516619
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sheet_black1x_0
+    21300002: sheet_black1x_1
+    21300004: sheet_black1x_2
+    21300006: sheet_black1x_3
+    21300008: sheet_black1x_4
+    21300010: sheet_black1x_5
+    21300012: sheet_black1x_6
+    21300014: sheet_black1x_7
+    21300016: sheet_black1x_8
+    21300018: sheet_black1x_9
+    21300020: sheet_black1x_10
+    21300022: sheet_black1x_11
+    21300024: sheet_black1x_12
+    21300026: sheet_black1x_13
+    21300028: sheet_black1x_14
+    21300030: sheet_black1x_15
+    21300032: sheet_black1x_16
+    21300034: sheet_black1x_17
+    21300036: sheet_black1x_18
+    21300038: sheet_black1x_19
+    21300040: sheet_black1x_20
+    21300042: sheet_black1x_21
+    21300044: sheet_black1x_22
+    21300046: sheet_black1x_23
+    21300048: sheet_black1x_24
+    21300050: sheet_black1x_25
+    21300052: sheet_black1x_26
+    21300054: sheet_black1x_27
+    21300056: sheet_black1x_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 105, y: 315, z: 110, w: 154}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sheet_black1x_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 471
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 493
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 475
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 421
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 421
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 414
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 365
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 371
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_8
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 375
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 321
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 325
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 317
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 271
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 268
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_14
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 267
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 215
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 249
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_17
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 218
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 171
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_19
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 181
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_20
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 167
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_21
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 121
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_22
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 114
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_23
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 117
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_24
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 81
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_25
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 75
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_26
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 71
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 43
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sheet_black1x_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 25
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
