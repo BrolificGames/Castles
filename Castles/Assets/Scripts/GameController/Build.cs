@@ -6,6 +6,7 @@ public class Build : MonoBehaviour
 	public bool placingBuilding;
 	public bool contextPlacement;
 	public GameObject buildingToPlace;
+	public float rotationRate = 20f;
 
 	private Ray placementRay;
 	private RaycastHit placement;
@@ -79,12 +80,12 @@ public class Build : MonoBehaviour
 		building.transform.position = new Vector3(placement.point.x, 0.5f, placement.point.z);
 	}
 
-	// rotate around center relative to amount dragged from the starting position on mouse
+	// rotate object around center relative to amount dragged from the starting position on mouse
 	private void rotateBuilding(GameObject building)
 	{
+
 		Vector3 updatedMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-		var rotation = updatedMousePosition.y - currentMousePosition.y;
-		var target = building.transform.rotation.y + rotation;
-		building.transform.Rotate(new Vector3(0f, target, 0f));
+		var mouseChange = currentMousePosition - updatedMousePosition;
+		building.transform.Rotate(0f, mouseChange.x * rotationRate, 0f, Space.World);
 	}
 }
