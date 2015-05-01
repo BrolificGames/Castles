@@ -14,6 +14,7 @@ public class Build : MonoBehaviour
 	private Vector3 currentMousePosition;
 	private GameObject building;
 	private Vector3 floatPosition = new Vector3(0f, 1.3f, 0f);
+	private Vector3 updatedMousePosition;
 
 	void Start()
 	{
@@ -38,7 +39,7 @@ public class Build : MonoBehaviour
 		if (contextPlacement && Input.GetMouseButtonDown(0))
 		{
 			// get position of mouse when first clicked to use as point of reference when rotating
-			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			rotating = true;
 		}
 
@@ -83,9 +84,15 @@ public class Build : MonoBehaviour
 	// rotate object around center relative to amount dragged from the starting position on mouse
 	private void rotateBuilding(GameObject building)
 	{
+		Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		if(Physics.Raycast(camRay, out hit))
+		{
+			Vector3 buildingToMouse = hit.point - transform.position;
+			buildingToMouse.y = 0f;
 
-		Vector3 updatedMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-		var mouseChange = currentMousePosition - updatedMousePosition;
-		building.transform.Rotate(0f, mouseChange.x * rotationRate, 0f, Space.World);
+			Quaternion newRotation = Quaternion.LookRotation(buildingToMouse);
+			building.transform.rotation = newRotation;
+		}
 	}
 }
