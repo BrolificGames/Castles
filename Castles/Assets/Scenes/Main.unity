@@ -564,6 +564,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1497879861}
+  - 114: {fileID: 1497879863}
+  - 114: {fileID: 1497879862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -583,6 +585,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1497879862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1497879860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ce0da274ce74ed49c85bb12441d54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1497879863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1497879860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a085aa41cd064d24961fa1fd61806ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placingBuilding: 1
+  contextPlacement: 0
+  buildingToPlace: {fileID: 114024, guid: b3d9c373631e7441d8cc3be5c808106b, type: 2}
+  rotationRate: 20
+  projectedPlacement: {fileID: 119322, guid: 81bf51a5d2b2541afac714b5fbb1769e, type: 2}
 --- !u!1 &1535419911
 GameObject:
   m_ObjectHideFlags: 0
