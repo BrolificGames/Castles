@@ -21,12 +21,6 @@ public class Player : MonoBehaviour
 	{
 		rotating = false;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
-		// add a projection to show buildings occupied space when it is placed
-		GameObject placementMarker = Instantiate(projectedPlacement) as GameObject;
-		placementMarker.transform.parent = building.transform;
-
-		placementMarker.transform.position = new Vector3(0f, 3f, 0f);
-		placementMarker.transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
 	}
 
 	void Update()
