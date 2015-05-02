@@ -7,6 +7,7 @@ public class Build : MonoBehaviour
 	public bool contextPlacement;
 	public GameObject buildingToPlace;
 	public float rotationRate = 20f;
+	public GameObject projectedPlacement;
 
 	private Ray placementRay;
 	private RaycastHit placement;
@@ -20,6 +21,9 @@ public class Build : MonoBehaviour
 	{
 		rotating = false;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
+		// add a projection to show buildings occupied space when it is placed
+		GameObject placementMarker = Instantiate(projectedPlacement) as GameObject;
+		placementMarker.transform.parent = building.transform;
 	}
 
 	void Update()
