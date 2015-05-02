@@ -7,7 +7,6 @@ public class WallController : MonoBehaviour
 
 	void Start()
 	{
-		ShowContextMenu();
 	}
 
 	
@@ -21,7 +20,5 @@ public class WallController : MonoBehaviour
 
 	private void ShowContextMenu()
 	{
-		canvas = gameObject.GetComponentInChildren<Canvas>();
-		canvas.enabled = true;
 	}
 }
