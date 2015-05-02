@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Build : MonoBehaviour 
+public class Player : MonoBehaviour 
 {
 	public bool placingBuilding;
 	public bool contextPlacement;
