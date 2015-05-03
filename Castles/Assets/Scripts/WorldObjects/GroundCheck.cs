@@ -13,7 +13,7 @@ public class GroundCheck : MonoBehaviour
 
 	private bool checkGround()
 	{
-		Collider[] hitColliders = Physics.OverlapSphere(transform, groundCheckRadius);
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, groundCheckRadius);
 		foreach (Collider collider in hitColliders)
 		{
 			if (collider.tag != "Ground")
