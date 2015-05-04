@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a4c8fe42f11436096d656fc004b4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheckRadius: 0
 --- !u!1 &970584948
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +697,6 @@ MonoBehaviour:
   contextPlacement: 0
   buildingToPlace: {fileID: 114024, guid: b3d9c373631e7441d8cc3be5c808106b, type: 2}
   rotationRate: 20
-  projectedPlacement: {fileID: 119322, guid: 81bf51a5d2b2541afac714b5fbb1769e, type: 2}
 --- !u!1 &1535419911
 GameObject:
   m_ObjectHideFlags: 0
