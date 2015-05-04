@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &103608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 473870}
+  - 114: {fileID: 11420226}
+  m_Layer: 0
+  m_Name: BlockedCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &114024
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +27,7 @@ GameObject:
   - 33: {fileID: 3355634}
   - 65: {fileID: 6589382}
   - 23: {fileID: 2350470}
-  - 114: {fileID: 11438872}
+  - 114: {fileID: 11441600}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -45,6 +61,7 @@ Transform:
   m_LocalPosition: {x: 1.90704095, y: 1.29999995, z: 5.3974452}
   m_LocalScale: {x: .300000012, y: 1, z: 1}
   m_Children:
+  - {fileID: 473870}
   - {fileID: 454492}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,6 +73,18 @@ Transform:
   m_GameObject: {fileID: 148698}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 1.11099994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422732}
+  m_RootOrder: 1
+--- !u!4 &473870
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.560000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422732}
@@ -103,7 +132,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11438872
+--- !u!114 &11420226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a4c8fe42f11436096d656fc004b4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0
+--- !u!114 &11441600
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -114,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd30f794e3e2140f88c748afc2bb3ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 0
+  sellValue: 0
+  hitPoints: 0
+  maxHitPoints: 0
 --- !u!119 &11927518
 Projector:
   m_ObjectHideFlags: 1
