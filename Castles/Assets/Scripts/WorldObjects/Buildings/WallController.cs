@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WallController : MonoBehaviour 
+public class WallController : WorldObjects 
 {
 	private Canvas canvas;
 
-	void Start()
-	{
-	}
-
-	
 	public void selected()
 	{
 		// show object is selected

@@ -15,7 +15,7 @@ public class WorldObjects : MonoBehaviour
 	
 	protected virtual void Start() 
 	{
-		player = transform.root.GetComponentInChildren< Player >();
+//		player = transform.root.GetComponentInChildren<Player>();
 	}
 	
 	protected virtual void Update() 
