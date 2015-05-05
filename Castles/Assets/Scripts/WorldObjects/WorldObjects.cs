@@ -37,4 +37,28 @@ public class WorldObjects : MonoBehaviour
 	{
 
 	}
+
+	public virtual void MouseClick(GameObject hitObject, Vector3 hitPoint, Player controller) {
+		if (currentlySelected && hitObject && hitObject.name != "Ground")
+		{
+			WorldObjects worldObject = hitObject.transform.GetComponent< WorldObjects >();
+			//clicked on another selectable object
+			if (worldObject)
+			{
+				ChangeSelection(worldObject, controller);
+			}
+		}
+	}
+
+	private void ChangeSelection(WorldObjects worldObject, Player controller)
+	{
+		SetSelection(false);
+		if (controller.selectedObject)
+		{
+			controller.selectedObject.SetSelection(false);
+		}
+
+		controller.selectedObject = worldObject;
+		worldObject.SetSelection(true);
+	}
 }
