@@ -31,28 +31,55 @@ public class PlayerInput : MonoBehaviour
 			displayBuildingPlacement(building);
 		}
 
-		if (placingBuilding && Input.GetMouseButtonUp(0))
-		{
-			placeBuilding(building);
-			placingBuilding = false;
-			contextPlacement = true;
-		}
-
-		if (contextPlacement && Input.GetMouseButtonDown(0))
-		{
-			// get position of mouse when first clicked to use as point of reference when rotating
-//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-			rotating = true;
-		}
-
-		if (contextPlacement && Input.GetMouseButtonUp(0))
-		{
-			rotating = false;
-		}
+		detectPlayerInput();
 
 		if (rotating)
 		{
 			rotateBuilding(building);
+		}
+	}
+
+	private void detectPlayerInput()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (placingBuilding)
+			{
+				placeBuilding(building);
+				placingBuilding = false;
+				contextPlacement = true;
+				return;
+			}
+
+			if (contextPlacement)
+			{
+				// get position of mouse when first clicked to use as point of reference when rotating
+				//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+				rotating = true;
+				return;
+			}
+
+			findClickedObject();
+		}
+		
+		if (contextPlacement && Input.GetMouseButtonUp(0))
+		{
+			rotating = false;
+		}
+	}
+
+	private void findClickedObject()
+	{
+		// if we clicked on an object that is selectable, then set it to selected
+		Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		if(Physics.Raycast(camRay, out hit))
+		{
+			if (hit.transform.tag != "Ground")
+			{
+				WorldObjects worldObject = hit.transform.GetComponent<WorldObjects>();
+				worldObject.SetSelection(true);
+			}
 		}
 	}
 
