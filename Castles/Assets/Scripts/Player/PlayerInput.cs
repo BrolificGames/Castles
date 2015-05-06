@@ -77,6 +77,9 @@ public class PlayerInput : MonoBehaviour
 		{
 			if (hit.transform.tag != "Ground")
 			{
+				// set player selection
+				player.SelectedObject = WorldObject;
+
 				WorldObjects worldObject = hit.transform.GetComponent<WorldObjects>();
 				worldObject.SetSelection(true);
 			}

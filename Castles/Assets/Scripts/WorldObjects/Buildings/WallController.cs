@@ -5,6 +5,10 @@ public class WallController : WorldObjects
 {
 	private Canvas canvas;
 
+	void Update()
+	{
+	}
+
 	public void selected()
 	{
 		// show object is selected

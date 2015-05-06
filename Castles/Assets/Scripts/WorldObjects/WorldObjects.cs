@@ -20,12 +20,16 @@ public class WorldObjects : MonoBehaviour
 	
 	protected virtual void Update() 
 	{
-		
+		if (currentlySelected)
+		{
+			showSelection();
+		}
 	}
 
 	public void SetSelection(bool selected) 
 	{
 		currentlySelected = selected;
+		showSelection();
 	}
 
 	public string[] GetActions() 
@@ -38,27 +42,18 @@ public class WorldObjects : MonoBehaviour
 
 	}
 
-	public virtual void MouseClick(GameObject hitObject, Vector3 hitPoint, Player controller) {
-		if (currentlySelected && hitObject && hitObject.name != "Ground")
-		{
-			WorldObjects worldObject = hitObject.transform.GetComponent< WorldObjects >();
-			//clicked on another selectable object
-			if (worldObject)
-			{
-				ChangeSelection(worldObject, controller);
-			}
-		}
-	}
-
-	private void ChangeSelection(WorldObjects worldObject, Player controller)
+	private void showSelection()
 	{
-		SetSelection(false);
-		if (controller.selectedObject)
+		if (currentlySelected)
 		{
-			controller.selectedObject.SetSelection(false);
+			var render = transform.GetComponent<Renderer>();
+			var shader = Shader.Find("SelectedHighlight");
+			render.material.shader = shader
+		} else
+		{
+			var render = transform.GetComponent<Renderer>();
+			var shader = Shader.Find("Standard");
+			render.material.shader = shader
 		}
-
-		controller.selectedObject = worldObject;
-		worldObject.SetSelection(true);
 	}
 }
