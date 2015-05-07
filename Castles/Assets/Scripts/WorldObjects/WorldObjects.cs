@@ -48,12 +48,13 @@ public class WorldObjects : MonoBehaviour
 		{
 			var render = transform.GetComponent<Renderer>();
 			var shader = Shader.Find("SelectedHighlight");
-			render.material.shader = shader
-		} else
+			render.material.shader = shader;
+		} 
+		else
 		{
 			var render = transform.GetComponent<Renderer>();
 			var shader = Shader.Find("Standard");
-			render.material.shader = shader
+			render.material.shader = shader;
 		}
 	}
 }

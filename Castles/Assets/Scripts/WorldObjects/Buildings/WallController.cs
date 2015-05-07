@@ -7,6 +7,7 @@ public class WallController : WorldObjects
 
 	void Update()
 	{
+		base.Update();
 	}
 
 	public void selected()

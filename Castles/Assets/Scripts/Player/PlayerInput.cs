@@ -17,11 +17,13 @@ public class PlayerInput : MonoBehaviour
 	private GameObject building;
 	private Vector3 floatPosition = new Vector3(0f, 1.3f, 0f);
 	private Vector3 updatedMousePosition;
+	private Player player;
 
 	void Start()
 	{
 		rotating = false;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
+		player = transform.GetComponent<Player>();
 	}
 
 	void Update()
@@ -76,12 +78,12 @@ public class PlayerInput : MonoBehaviour
 		if(Physics.Raycast(camRay, out hit))
 		{
 			if (hit.transform.tag != "Ground")
-			{
-				// set player selection
-				player.SelectedObject = WorldObject;
-
+			{			
 				WorldObjects worldObject = hit.transform.GetComponent<WorldObjects>();
 				worldObject.SetSelection(true);
+
+				// set player selection
+				player.selectedObject = worldObject;
 			}
 		}
 	}
