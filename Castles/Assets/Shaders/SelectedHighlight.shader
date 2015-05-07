@@ -15,45 +15,41 @@
 			Blend SrcAlpha OneMinusSrcAlpha
   
 			CGPROGRAM 
-			#pragma exclude_renderers d3d11 xbox360
-			#pragma exclude_renderers gles
-			#pragma exclude_renderers xbox360
 			#pragma vertex vert 
 
-	          struct appdata { 
-	              float4 vertex; 
-	              float3 normal; 
-	          }; 
+				struct appdata { 
+					float4 vertex; 
+					float3 normal; 
+				}; 
+		  
+				struct v2f { 
+					float4 pos : POSITION; 
+					float4 color : COLOR; 
+					float fog : FOGC; 
+				}; 
+				uniform float _Outline; 
+				uniform float4 _OutlineColor; 
+		  
+				v2f vert(appdata v) { 
+					v2f o; 
+					o.pos = mul(UNITY_MATRIX_MVP, v.vertex); 
+					float3 norm = mul ((float3x3)UNITY_MATRIX_MV, v.normal); 
+					norm.x *= UNITY_MATRIX_P[0][0]; 
+					norm.y *= UNITY_MATRIX_P[1][1]; 
+					o.pos.xy += norm.xy * o.pos.z * _Outline; 
+
+					o.fog = o.pos.z; 
+					o.color = _OutlineColor; 
+					return o; 
+				} 
 	  
-	          struct v2f { 
-	             float4 pos : POSITION; 
-	             float4 color : COLOR; 
-	             float fog : FOGC; 
-	          }; 
-	          uniform float _Outline; 
-	          uniform float4 _OutlineColor; 
+			ENDCG 
 	  
-	          v2f vert(appdata v) { 
-	             v2f o; 
-	             o.pos = mul(UNITY_MATRIX_MVP, v.vertex); 
-	             float3 norm = mul ((float3x3)UNITY_MATRIX_MV, v.normal); 
-	             norm.x *= UNITY_MATRIX_P[0][0]; 
-	             norm.y *= UNITY_MATRIX_P[1][1]; 
-	             o.pos.xy += norm.xy * o.pos.z * _Outline; 
-	  
-	             o.fog = o.pos.z; 
-	             o.color = _OutlineColor; 
-	             return o; 
-	          } 
-	  
-	          ENDCG 
-	  
-	          Cull Front
-	          ZWrite On
-	          ColorMask RGBA
-	          Blend SrcAlpha OneMinusSrcAlpha
-	          //? -Note: I don't remember why I put a "?" here 
-	          SetTexture [_MainTex] { combine primary } 
+			Cull Front
+			ZWrite On
+			ColorMask RGBA
+			Blend SrcAlpha OneMinusSrcAlpha
+			SetTexture [_MainTex] { combine primary } 
 		} 
     } 
   
