@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameController\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\GameController\ScreenController.cs" />
+     <Compile Include="Assets\Scripts\Player\MenuInput.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\Buildings\WallController.cs" />
