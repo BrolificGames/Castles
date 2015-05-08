@@ -133,7 +133,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00200000009
+        second: .00249999994
     m_Colors:
       data:
         first:
@@ -142,7 +142,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .76924324, g: .808558643, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI
