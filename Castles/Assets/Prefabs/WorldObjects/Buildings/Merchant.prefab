@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2668457, y: 3.09643555, z: 1.45605469}
+  m_LocalPosition: {x: -.792028129, y: .649999976, z: -9.41972828}
   m_LocalScale: {x: 2, y: 1.29999995, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +85,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1baf87445f746457199431c8df732e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 0
+  sellValue: 0
+  hitPoints: 0
+  maxHitPoints: 0
+  merchantCanvas: {fileID: 22334628, guid: be11bf2a12b604b1db4b434d7adea85a, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
