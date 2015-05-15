@@ -3,14 +3,13 @@ using System.Collections;
 
 public class WallController : WorldObjects 
 {
-	private Canvas canvas;
-
-	void Update()
+	protected override void Awake()
 	{
-		base.Update();
+		base.Awake();
 	}
 
-	private void ShowContextMenu()
+	protected override void Update()
 	{
+		base.Update();
 	}
 }

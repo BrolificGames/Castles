@@ -5,7 +5,12 @@ public class MerchantController : WorldObjects
 {
 	public Canvas merchantCanvas;
 
-	void Update()
+	protected override void Awake()
+	{
+		base.Awake();
+	}
+	
+	protected override void Update()
 	{
 		if (currentlySelected)
 		{
