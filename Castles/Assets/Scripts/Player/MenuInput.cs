@@ -11,4 +11,14 @@ public class MenuInput : MonoBehaviour
 	{
 
 	}
+
+	public void CancelPlacement()
+	{
+
+	}
+
+	public void AcceptPlacement()
+	{
+
+	}
 }
