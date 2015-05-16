@@ -5,4 +5,10 @@ using System.Collections;
 public class MenuInput : MonoBehaviour 
 {
 	public GameObject[] availableBuildings { get; set; }
+	public Canvas contextMenu;
+
+	public void ShowContextMenu(Vector3 worldPosition)
+	{
+
+	}
 }
