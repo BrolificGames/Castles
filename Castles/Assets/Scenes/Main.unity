@@ -371,6 +371,7 @@ GameObject:
   - 4: {fileID: 1497879861}
   - 114: {fileID: 1497879863}
   - 114: {fileID: 1497879862}
+  - 114: {fileID: 1497879864}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -416,6 +417,18 @@ MonoBehaviour:
   contextPlacement: 0
   buildingToPlace: {fileID: 114024, guid: b3d9c373631e7441d8cc3be5c808106b, type: 2}
   rotationRate: 20
+--- !u!114 &1497879864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1497879860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d96fbb0a335342ea9a63a8e52b2d740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextMenu: {fileID: 22320644, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
 --- !u!1001 &1779049472
 Prefab:
   m_ObjectHideFlags: 0
@@ -455,15 +468,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 22393056, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
+    - target: {fileID: 22320644, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 970584952}
-    - target: {fileID: 100960, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
-      propertyPath: m_Name
-      value: UserInterface
-      objectReference: {fileID: 0}
-    - target: {fileID: 22320644, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
+    - target: {fileID: 22393056, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 970584952}
