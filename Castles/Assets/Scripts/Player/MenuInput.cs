@@ -1,31 +1,40 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 // this script handles all menu actions
 public class MenuInput : MonoBehaviour 
 {
 	public GameObject[] availableBuildings { get; set; }
-	public Canvas contextMenu;
 
+	private ContextMenu contextMenu;
 	private PlayerInput playerInput;
+
+	private UnityAction cancelAction;
+	private UnityAction acceptAction;
 
 	void Awake()
 	{
 		playerInput = gameObject.GetComponent<PlayerInput>();
+		contextMenu = ContextMenu.Instance();
+
+		cancelAction = new UnityAction(CancelPlacement);
+		acceptAction = new UnityAction(AcceptPlacement);
 	}
 
 	public void ShowContextMenu(Vector3 worldPosition)
 	{
 		contextMenu.transform.position = worldPosition + new Vector3(0f, 5f, 0f);
+		contextMenu.Choice(AcceptPlacement, CancelPlacement);
 	}
 
 	public void CancelPlacement()
 	{
-
+		playerInput.cancelPlacement(); 
 	}
 
 	public void AcceptPlacement()
 	{
-
+		playerInput.AcceptBuildingPlacement();
 	}
 }
