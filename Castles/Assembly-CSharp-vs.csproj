@@ -49,12 +49,14 @@
      <Compile Include="Assets\Scripts\GameController\GameController.cs" />
      <Compile Include="Assets\Scripts\GameController\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\GameController\ScreenController.cs" />
+     <Compile Include="Assets\Scripts\Player\ContextMenu.cs" />
      <Compile Include="Assets\Scripts\Player\MenuInput.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\Buildings\MerchantController.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\Buildings\WallController.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\WorldObjects\Units\UnitCommands.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\WorldObjects.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
