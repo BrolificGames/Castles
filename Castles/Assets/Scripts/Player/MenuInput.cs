@@ -10,22 +10,16 @@ public class MenuInput : MonoBehaviour
 	private ContextMenu contextMenu;
 	private PlayerInput playerInput;
 
-	private UnityAction cancelAction;
-	private UnityAction acceptAction;
-
 	void Awake()
 	{
 		playerInput = gameObject.GetComponent<PlayerInput>();
 		contextMenu = ContextMenu.Instance();
-
-		cancelAction = new UnityAction(CancelPlacement);
-		acceptAction = new UnityAction(AcceptPlacement);
 	}
 
 	public void ShowContextMenu()
 	{
 		gameObject.SetActive(true);
-		contextMenu.Choice(acceptAction, cancelAction);
+		contextMenu.Choice(AcceptPlacement, CancelPlacement);
 	}
 
 	public void CancelPlacement()
