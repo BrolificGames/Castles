@@ -18,12 +18,14 @@ public class PlayerInput : MonoBehaviour
 	private Vector3 floatPosition = new Vector3(0f, 1.3f, 0f);
 	private Vector3 updatedMousePosition;
 	private Player player;
+	private MenuInput menuInput;
 
 	void Start()
 	{
 		rotating = false;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
 		player = transform.GetComponent<Player>();
+		menuInput = transform.GetComponentInChildren<MenuInput>();
 	}
 
 	void Update()
@@ -58,6 +60,7 @@ public class PlayerInput : MonoBehaviour
 				// get position of mouse when first clicked to use as point of reference when rotating
 				//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 				rotating = true;
+				menuInput.ShowContextMenu(building.transform.position);
 				return;
 			}
 
@@ -75,7 +78,6 @@ public class PlayerInput : MonoBehaviour
 		placingBuilding = false;
 		contextPlacement = false;
 		rotating = false;
-		Debug.Log ("called");
 	}
 
 	public void cancelPlacement()
