@@ -22,9 +22,9 @@ public class MenuInput : MonoBehaviour
 		acceptAction = new UnityAction(AcceptPlacement);
 	}
 
-	public void ShowContextMenu(Vector3 worldPosition)
+	public void ShowContextMenu()
 	{
-		contextMenu.transform.position = worldPosition + new Vector3(0f, 5f, 0f);
+		gameObject.SetActive(true);
 		contextMenu.Choice(acceptAction, cancelAction);
 	}
 

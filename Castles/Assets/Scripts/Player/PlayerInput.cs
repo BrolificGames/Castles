@@ -60,7 +60,7 @@ public class PlayerInput : MonoBehaviour
 				// get position of mouse when first clicked to use as point of reference when rotating
 				//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 				rotating = true;
-				menuInput.ShowContextMenu(building.transform.position);
+				menuInput.ShowContextMenu();
 				return;
 			}
 
