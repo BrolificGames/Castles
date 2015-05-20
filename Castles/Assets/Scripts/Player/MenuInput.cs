@@ -25,7 +25,7 @@ public class MenuInput : MonoBehaviour
 	public void ShowContextMenu(Vector3 worldPosition)
 	{
 		contextMenu.transform.position = worldPosition + new Vector3(0f, 5f, 0f);
-		contextMenu.Choice(AcceptPlacement, CancelPlacement);
+		contextMenu.Choice(acceptAction, cancelAction);
 	}
 
 	public void CancelPlacement()
@@ -35,6 +35,6 @@ public class MenuInput : MonoBehaviour
 
 	public void AcceptPlacement()
 	{
-		playerInput.AcceptBuildingPlacement();
+		playerInput.acceptPlacement();
 	}
 }

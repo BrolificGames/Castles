@@ -5,14 +5,12 @@ public class WorldObjects : MonoBehaviour
 {
 	public int cost, sellValue, hitPoints, maxHitPoints;
 
-	protected Canvas contextMenu;
 	protected Player player;
 	protected string[] actions = {};
 	protected bool currentlySelected = false;
 
 	protected virtual void Awake() 
 	{
-		contextMenu = GameObject.FindGameObjectWithTag("ContextMenu").GetComponent<Canvas>();
 	}
 	
 	protected virtual void Start() 

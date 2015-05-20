@@ -70,6 +70,21 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
+	public void acceptPlacement()
+	{
+		placingBuilding = false;
+		contextPlacement = false;
+		rotating = false;
+		Debug.Log ("called");
+	}
+
+	public void cancelPlacement()
+	{
+		placingBuilding = true;
+		contextPlacement = false;
+		rotating = false;
+	}
+
 	private void findClickedObject()
 	{
 		// if we clicked on an object that is selectable, then set it to selected
