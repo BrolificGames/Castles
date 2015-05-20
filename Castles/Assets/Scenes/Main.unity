@@ -493,7 +493,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22420218, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 184.25
+      value: 184
       objectReference: {fileID: 0}
     - target: {fileID: 22420218, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -501,7 +501,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22420218, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 368.5
+      value: 368
       objectReference: {fileID: 0}
     - target: {fileID: 22420218, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_SizeDelta.y
@@ -517,7 +517,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22496046, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 552.75
+      value: 552
       objectReference: {fileID: 0}
     - target: {fileID: 22496046, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -525,7 +525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22496046, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 368.5
+      value: 368
       objectReference: {fileID: 0}
     - target: {fileID: 22496046, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_SizeDelta.y
@@ -639,7 +639,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22320644, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152746, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
