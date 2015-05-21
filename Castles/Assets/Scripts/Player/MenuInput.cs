@@ -18,7 +18,6 @@ public class MenuInput : MonoBehaviour
 
 	public void ShowContextMenu()
 	{
-		gameObject.SetActive(true);
 		contextMenu.Choice(AcceptPlacement, CancelPlacement);
 	}
 
