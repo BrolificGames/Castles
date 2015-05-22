@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Player\MenuInput.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\WorldObjects\Buildings\Castle.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\Buildings\MerchantController.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\Buildings\WallController.cs" />
      <Compile Include="Assets\Scripts\WorldObjects\GroundCheck.cs" />
