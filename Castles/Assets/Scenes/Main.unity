@@ -1184,6 +1184,22 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
+--- !u!1 &1763216136 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 191624, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
+  m_PrefabInternal: {fileID: 1541473501}
+--- !u!114 &1763216137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1763216136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea02cb011ce946a5aef4379d897a600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButton: {fileID: 0}
 --- !u!1 &1832008157
 GameObject:
   m_ObjectHideFlags: 0
