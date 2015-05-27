@@ -1152,6 +1152,10 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 22413244, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
   m_IsPrefabParent: 0
@@ -1199,7 +1203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea02cb011ce946a5aef4379d897a600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 0}
+  backButton: {fileID: 1907581044}
+  containerPanel: {fileID: 1631722481}
+  speed: .300000012
 --- !u!1 &1832008157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1342,7 @@ GameObject:
   - 114: {fileID: 1907581044}
   - 114: {fileID: 1907581043}
   m_Layer: 5
-  m_Name: Other
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

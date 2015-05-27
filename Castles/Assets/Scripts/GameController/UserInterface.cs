@@ -6,8 +6,13 @@ using System.Collections;
 public class UserInterface : MonoBehaviour 
 {
 	public Button backButton;
+	public GameObject containerPanel;
+	public float speed = 0.2f;
+
 	private static UserInterface userInterface;
-	
+	private bool closing = false;
+	private Transform panelTransform;
+
 	public static UserInterface Instance()
 	{
 		if (!userInterface) 
@@ -21,6 +26,13 @@ public class UserInterface : MonoBehaviour
 		
 		return userInterface;
 	}
+	void Update()
+	{
+		if (closing)
+		{
+			CloseMenu();
+		}
+	}
 	
 	public void Choice(UnityAction backEvent)
 	{
@@ -28,11 +40,24 @@ public class UserInterface : MonoBehaviour
 		
 		backButton.onClick.RemoveAllListeners();
 		backButton.onClick.AddListener(backEvent);
-		backButton.onClick.AddListener(CloseMenu);
+		backButton.onClick.AddListener(SetCloseMenu);
+	}
+
+	private void SetCloseMenu()
+	{
+		closing = true;
 	}
 	
 	public void CloseMenu()
 	{
 		// slide the menu back
+		if (panelTransform.position.x <= -65f)
+		{
+			closing = false;
+		}
+
+		panelTransform.position = Vector3.Lerp(panelTransform.position, 
+		                                     new Vector3(-70f, panelTransform.position.y, 0f), 
+		                                     speed * Time.time);
 	}
 }
