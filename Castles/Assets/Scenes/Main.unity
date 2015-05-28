@@ -1078,7 +1078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447936, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 22320644, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_Camera
@@ -1154,7 +1154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22413244, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33169db2d1e9c4794b8b10e5675558ce, type: 2}

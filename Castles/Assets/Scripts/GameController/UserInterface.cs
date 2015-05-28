@@ -26,6 +26,14 @@ public class UserInterface : MonoBehaviour
 		
 		return userInterface;
 	}
+//
+//	void Awake()
+//	{
+//		backButton.onClick.RemoveAllListeners();
+//		backButton.onClick.AddListener(SetCloseMenu);
+//		panelTransform = containerPanel.transform;
+//	}
+
 	void Update()
 	{
 		if (closing)
