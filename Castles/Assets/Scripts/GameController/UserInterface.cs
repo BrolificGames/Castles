@@ -6,11 +6,13 @@ using System.Collections;
 public class UserInterface : MonoBehaviour 
 {
 	public Button backButton;
+	public Button showButton;
 	public GameObject containerPanel;
 	public float speed = 0.2f;
 
 	private static UserInterface userInterface;
 	private bool closing = false;
+	private bool opening = false;
 	private Transform panelTransform;
 
 	public static UserInterface Instance()
@@ -26,13 +28,13 @@ public class UserInterface : MonoBehaviour
 		
 		return userInterface;
 	}
-//
-//	void Awake()
-//	{
-//		backButton.onClick.RemoveAllListeners();
-//		backButton.onClick.AddListener(SetCloseMenu);
-//		panelTransform = containerPanel.transform;
-//	}
+
+	void Awake()
+	{
+		showButton.onClick.RemoveAllListeners();
+		showButton.onClick.AddListener(SetOpenMenu);
+		panelTransform = containerPanel.transform;
+	}
 
 	void Update()
 	{
@@ -40,23 +42,43 @@ public class UserInterface : MonoBehaviour
 		{
 			CloseMenu();
 		}
+
+		if (opening)
+		{
+			OpenMenu();
+		}
 	}
 	
-	public void Choice(UnityAction backEvent)
+	public void SetOpenMenu()
 	{
 		// slide the menu out
+		opening = true;
 		
 		backButton.onClick.RemoveAllListeners();
-		backButton.onClick.AddListener(backEvent);
 		backButton.onClick.AddListener(SetCloseMenu);
 	}
 
 	private void SetCloseMenu()
 	{
 		closing = true;
+
+		showButton.onClick.RemoveAllListeners();
+		showButton.onClick.AddListener(SetOpenMenu);
+	}
+
+	private void OpenMenu()
+	{
+		if (panelTransform.position.x <= 0)
+		{
+			opening = false;
+		}
+
+		panelTransform.position = Vector3.Lerp(panelTransform.position, 
+		                                       new Vector3(0f, panelTransform.position.y, 0f),
+		                                       speed * Time.time);
 	}
 	
-	public void CloseMenu()
+	private void CloseMenu()
 	{
 		// slide the menu back
 		if (panelTransform.position.x <= -65f)
