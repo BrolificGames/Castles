@@ -53,7 +53,8 @@ public class UserInterface : MonoBehaviour
 	{
 		// slide the menu out
 		opening = true;
-		
+		showButton.gameObject.SetActive(false);
+		backButton.gameObject.SetActive(true);
 		backButton.onClick.RemoveAllListeners();
 		backButton.onClick.AddListener(SetCloseMenu);
 	}
@@ -61,7 +62,8 @@ public class UserInterface : MonoBehaviour
 	private void SetCloseMenu()
 	{
 		closing = true;
-
+		showButton.gameObject.SetActive(true);
+		backButton.gameObject.SetActive(false);
 		showButton.onClick.RemoveAllListeners();
 		showButton.onClick.AddListener(SetOpenMenu);
 	}
