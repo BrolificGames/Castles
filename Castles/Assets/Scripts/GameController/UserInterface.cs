@@ -89,7 +89,7 @@ public class UserInterface : MonoBehaviour
 		}
 
 		panelTransform.position = Vector3.Lerp(panelTransform.position, 
-		                                     new Vector3(-70f, panelTransform.position.y, 0f), 
+		                                     new Vector3(-70f, panelTransform.position.y, -70f), 
 		                                     speed * Time.time);
 	}
 }

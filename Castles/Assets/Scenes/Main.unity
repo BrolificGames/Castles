@@ -1376,7 +1376,7 @@ MonoBehaviour:
   backButton: {fileID: 1907581044}
   showButton: {fileID: 262737213}
   containerPanel: {fileID: 1631722481}
-  speed: .300000012
+  speed: .0299999993
 --- !u!224 &1763216138 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22426804, guid: 33169db2d1e9c4794b8b10e5675558ce,
