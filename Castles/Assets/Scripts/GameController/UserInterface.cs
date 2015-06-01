@@ -68,7 +68,7 @@ public class UserInterface : MonoBehaviour
 
 	private void OpenMenu()
 	{
-		if (panelTransform.position.x <= 0)
+		if (panelTransform.position.x >= 0)
 		{
 			opening = false;
 		}
@@ -87,7 +87,7 @@ public class UserInterface : MonoBehaviour
 		}
 
 		panelTransform.position = Vector3.Lerp(panelTransform.position, 
-		                                     new Vector3(-70f, panelTransform.position.y, -70f), 
+		                                     new Vector3(-70f, panelTransform.position.y, 0f), 
 		                                     speed * Time.time);
 	}
 }
