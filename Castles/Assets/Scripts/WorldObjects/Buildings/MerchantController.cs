@@ -15,13 +15,17 @@ public class MerchantController : WorldObjects
 		if (currentlySelected)
 		{
 			base.Update();
-			showMenu();
+			showMenu(true);
+		} else 
+		{
+			showMenu(false);
 		}
+
 	}
 
-	private void showMenu()
+	private void showMenu(bool enabled)
 	{
-		merchantCanvas.enabled = true;
+		merchantCanvas.enabled = enabled;
 	}
 }
 
