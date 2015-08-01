@@ -95,7 +95,12 @@ public class PlayerInput : MonoBehaviour
 		if(Physics.Raycast(camRay, out hit))
 		{
 			if (hit.transform.tag != "Ground")
-			{			
+			{	
+				if (player.selectedObject != null)
+				{
+					player.selectedObject.SetSelection(false);
+				}
+
 				WorldObjects worldObject = hit.transform.GetComponent<WorldObjects>();
 				worldObject.SetSelection(true);
 
