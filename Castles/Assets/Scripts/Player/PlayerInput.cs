@@ -49,9 +49,12 @@ public class PlayerInput : MonoBehaviour
 		{
 			if (placingBuilding)
 			{
-				placeBuilding(building);
-				placingBuilding = false;
-				contextPlacement = true;
+				bool placed = placeBuilding(building);
+				if (placed)
+				{
+					placingBuilding = false;
+					contextPlacement = true;
+				}
 				return;
 			}
 
@@ -122,19 +125,19 @@ public class PlayerInput : MonoBehaviour
 	}
 
 	// place the building if it can be placed
-	private void placeBuilding(GameObject building)
+	private bool placeBuilding(GameObject building)
 	{
 		placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(placementRay, out placement))
 		{
 			if (placement.transform.tag != "Ground")
 			{
-				Debug.Log("not ground");
-				return;
+				return false;
 			}
 		}
 
 		building.transform.position = new Vector3(placement.point.x, 0.5f, placement.point.z);
+		return true;
 	}
 
 	// rotate object around center relative to amount dragged from the starting position on mouse
