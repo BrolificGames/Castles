@@ -97,13 +97,13 @@ public class PlayerInput : MonoBehaviour
 		RaycastHit hit;
 		if(Physics.Raycast(camRay, out hit))
 		{
+			if (player.selectedObject != null)
+			{
+				player.selectedObject.SetSelection(false);
+			}
+
 			if (hit.transform.tag != "Ground")
 			{	
-				if (player.selectedObject != null)
-				{
-					player.selectedObject.SetSelection(false);
-				}
-
 				WorldObjects worldObject = hit.transform.GetComponent<WorldObjects>();
 				worldObject.SetSelection(true);
 
@@ -113,7 +113,6 @@ public class PlayerInput : MonoBehaviour
 			else 
 			{
 				// unselect anything if we clicked on ground
-				player.selectedObject.SetSelection(false);
 				player.selectedObject = null;
 			}
 		}
