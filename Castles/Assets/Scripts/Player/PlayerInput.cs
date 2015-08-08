@@ -110,6 +110,12 @@ public class PlayerInput : MonoBehaviour
 				// set player selection
 				player.selectedObject = worldObject;
 			}
+			else 
+			{
+				// unselect anything if we clicked on ground
+				player.selectedObject.SetSelection(false);
+				player.selectedObject = null;
+			}
 		}
 	}
 
