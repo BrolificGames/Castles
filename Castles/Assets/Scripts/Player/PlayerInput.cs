@@ -153,6 +153,7 @@ public class PlayerInput : MonoBehaviour
 		if(Physics.Raycast(camRay, out hit))
 		{
 			Vector3 buildingToMouse = hit.point - transform.position;
+			Debug.DrawLine(building.transform.position, buildingToMouse, Color.cyan);
 			buildingToMouse.y = 0f;
 
 			Quaternion newRotation = Quaternion.LookRotation(buildingToMouse);
