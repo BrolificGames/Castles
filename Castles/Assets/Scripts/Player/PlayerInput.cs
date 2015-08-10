@@ -156,6 +156,10 @@ public class PlayerInput : MonoBehaviour
 			Debug.DrawLine(building.transform.position, buildingToMouse, Color.cyan);
 			buildingToMouse.y = 0f;
 
+			Debug.DrawLine(building.transform.position, Vector3.up, Color.blue);
+			Debug.DrawLine(building.transform.position, Vector3.forward, Color.grey);
+			Debug.DrawLine(building.transform.position, Vector3.down, Color.green);
+
 			Quaternion newRotation = Quaternion.LookRotation(buildingToMouse);
 			building.transform.rotation = newRotation;
 		}

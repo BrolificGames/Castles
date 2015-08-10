@@ -11,6 +11,5 @@ public class WallController : WorldObjects
 	protected override void Update()
 	{
 		base.Update();
-		Debug.DrawLine(gameObject.transform.position, Vector3.forward);
 	}
 }
