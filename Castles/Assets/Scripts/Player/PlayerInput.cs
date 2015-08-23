@@ -5,13 +5,11 @@ using System.Collections;
 // (eg placing a building) and what was clicked on as well as touch input
 public class PlayerInput : MonoBehaviour 
 {
-	public bool placingBuilding;
-	public bool contextPlacement;
 	public GameObject buildingToPlace;
 	public float rotationRate = 20f;
 
+	private GameController.InputState inputState;
 	private BuildingManager buildingManager;
-	private bool rotating;
 	private Vector3 currentMousePosition;
 	private GameObject building;
 	private Vector3 updatedMousePosition;
@@ -20,7 +18,7 @@ public class PlayerInput : MonoBehaviour
 
 	void Start()
 	{
-		rotating = false;
+		inputState.rotating = false;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
 		player = transform.GetComponent<Player>();
 		menuInput = transform.GetComponentInChildren<MenuInput>();
@@ -29,14 +27,17 @@ public class PlayerInput : MonoBehaviour
 
 	void Update()
 	{
-		if (placingBuilding)
+		if (inputState.placing)
 		{
 			buildingManager.displayBuildingPlacement(building);
 		}
 
 		detectPlayerInput();
+	}
 
-		if (rotating)
+	void onMouseDrag()
+	{
+		if (inputState.rotating)
 		{
 			buildingManager.rotateBuilding(building);
 		}
@@ -46,22 +47,22 @@ public class PlayerInput : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			if (placingBuilding)
+			if (inputState.placing)
 			{
 				bool placed = buildingManager.placeBuilding(building);
 				if (placed)
 				{
-					placingBuilding = false;
-					contextPlacement = true;
+					inputState.placing = false;
+					inputState.contextPlacement = true;
 				}
 				return;
 			}
 
-			if (contextPlacement)
+			if (inputState.contextPlacement)
 			{
 				// get position of mouse when first clicked to use as point of reference when rotating
 				//			currentMousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-				rotating = true;
+				inputState.rotating = true;
 				menuInput.ShowContextMenu();
 				return;
 			}
@@ -69,9 +70,9 @@ public class PlayerInput : MonoBehaviour
 			findClickedObject();
 		}
 		
-		if (contextPlacement && Input.GetMouseButtonUp(0))
+		if (inputState.contextPlacement && Input.GetMouseButtonUp(0))
 		{
-			rotating = false;
+			inputState.rotating = false;
 		}
 	}
 
