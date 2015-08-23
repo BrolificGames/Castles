@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour
 	void Start()
 	{
 		inputState.rotating = false;
+		inputState.placing = true;
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
 		player = transform.GetComponent<Player>();
 		menuInput = transform.GetComponentInChildren<MenuInput>();
