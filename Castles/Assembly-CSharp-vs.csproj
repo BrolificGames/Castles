@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\GameController\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\GameController\ScreenController.cs" />
      <Compile Include="Assets\Scripts\GameController\UserInterface.cs" />
+     <Compile Include="Assets\Scripts\Player\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Player\ContextMenu.cs" />
      <Compile Include="Assets\Scripts\Player\MenuInput.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />

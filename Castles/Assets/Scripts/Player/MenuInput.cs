@@ -8,11 +8,11 @@ public class MenuInput : MonoBehaviour
 	public GameObject[] availableBuildings { get; set; }
 
 	private ContextMenu contextMenu;
-	private PlayerInput playerInput;
+	private BuildingManager buildingManager;
 
-	void Awake()
+	void Start()
 	{
-		playerInput = gameObject.GetComponent<PlayerInput>();
+		buildingManager = gameObject.GetComponent<BuildingManager>();
 		contextMenu = ContextMenu.Instance();
 	}
 
@@ -23,11 +23,11 @@ public class MenuInput : MonoBehaviour
 
 	public void CancelPlacement()
 	{
-		playerInput.cancelPlacement(); 
+		buildingManager.cancelPlacement(); 
 	}
 
 	public void AcceptPlacement()
 	{
-		playerInput.acceptPlacement();
+		buildingManager.acceptPlacement();
 	}
 }

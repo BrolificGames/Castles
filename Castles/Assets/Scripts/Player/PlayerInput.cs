@@ -10,12 +10,10 @@ public class PlayerInput : MonoBehaviour
 	public GameObject buildingToPlace;
 	public float rotationRate = 20f;
 
-	private Ray placementRay;
-	private RaycastHit placement;
+	private BuildingManager buildingManager;
 	private bool rotating;
 	private Vector3 currentMousePosition;
 	private GameObject building;
-	private Vector3 floatPosition = new Vector3(0f, 1.3f, 0f);
 	private Vector3 updatedMousePosition;
 	private Player player;
 	private MenuInput menuInput;
@@ -26,20 +24,21 @@ public class PlayerInput : MonoBehaviour
 		building = Instantiate(buildingToPlace, new Vector3(100f, 100f, 100f), Quaternion.identity) as GameObject;
 		player = transform.GetComponent<Player>();
 		menuInput = transform.GetComponentInChildren<MenuInput>();
+		buildingManager = gameObject.GetComponent<BuildingManager>();
 	}
 
 	void Update()
 	{
 		if (placingBuilding)
 		{
-			displayBuildingPlacement(building);
+			buildingManager.displayBuildingPlacement(building);
 		}
 
 		detectPlayerInput();
 
 		if (rotating)
 		{
-			rotateBuilding(building);
+			buildingManager.rotateBuilding(building);
 		}
 	}
 
@@ -49,7 +48,7 @@ public class PlayerInput : MonoBehaviour
 		{
 			if (placingBuilding)
 			{
-				bool placed = placeBuilding(building);
+				bool placed = buildingManager.placeBuilding(building);
 				if (placed)
 				{
 					placingBuilding = false;
@@ -74,20 +73,6 @@ public class PlayerInput : MonoBehaviour
 		{
 			rotating = false;
 		}
-	}
-
-	public void acceptPlacement()
-	{
-		placingBuilding = false;
-		contextPlacement = false;
-		rotating = false;
-	}
-
-	public void cancelPlacement()
-	{
-		placingBuilding = true;
-		contextPlacement = false;
-		rotating = false;
 	}
 
 	private void findClickedObject()
@@ -115,53 +100,6 @@ public class PlayerInput : MonoBehaviour
 				// unselect anything if we clicked on ground
 				player.selectedObject = null;
 			}
-		}
-	}
-
-	// show the building preview and move it around with drag
-	private void displayBuildingPlacement(GameObject building)
-	{
-		placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-		if (Physics.Raycast(placementRay, out placement))
-		{
-			building.transform.position = placement.point + floatPosition;
-		}
-	}
-
-	// place the building if it can be placed
-	private bool placeBuilding(GameObject building)
-	{
-		placementRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if (Physics.Raycast(placementRay, out placement))
-		{
-			if (placement.transform.tag != "Ground")
-			{
-				return false;
-			}
-		}
-
-		building.transform.position = new Vector3(placement.point.x, 0.5f, placement.point.z);
-		return true;
-	}
-
-	// rotate object around center relative to amount dragged from the starting position on mouse
-	private void rotateBuilding(GameObject building)
-	{
-		Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if(Physics.Raycast(camRay, out hit))
-		{
-			Vector3 buildingToMouse = hit.point - transform.position;
-			Debug.DrawLine(building.transform.position, buildingToMouse, Color.cyan);
-			buildingToMouse.y = 0f;
-
-			Debug.DrawLine(building.transform.position, Vector3.up, Color.blue);
-			Debug.DrawLine(building.transform.position, Vector3.forward, Color.grey);
-			Debug.DrawLine(building.transform.position, Vector3.down, Color.green);
-
-			Quaternion newRotation = Quaternion.LookRotation(buildingToMouse);
-			building.transform.rotation = newRotation;
 		}
 	}
 }
