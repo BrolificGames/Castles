@@ -33,10 +33,7 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		detectPlayerInput();
-	}
 
-	void onMouseDrag()
-	{
 		if (inputState.rotating)
 		{
 			buildingManager.rotateBuilding(building);
